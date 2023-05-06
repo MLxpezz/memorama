@@ -1,0 +1,168 @@
+/* body {
+    padding: 0;
+    margin: 0;
+    background-color: rgb(9, 73, 73);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.card {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+.card .front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform: perspective(600px) rotateY(0deg);
+
+
+    transition: all 1s;
+}
+
+.card .front img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform: perspective(600px) rotateY(180deg);
+    background-color: aqua;
+
+    transition: all 1s;
+}
+
+.hideFront {
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.showBack{
+    transform: perspective(600px) rotateY(360deg);
+} */
+
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(fondo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.cards-container {
+    border: 1px solid #000;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 25px;
+    justify-content: space-around;
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+
+.cards-container .cards {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    width: 350px;
+    grid-gap: 5px;
+    height: 400px;
+}
+
+.fliper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.card {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid #fff;
+    backface-visibility: hidden;
+    transform: perspective(600px) rotateY(180deg);
+
+    transition: all 0.3s;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform: perspective(600px) rotateY(0deg);
+    background-color: transparent;
+    border: 1px solid #000;
+
+    transition: all 0.3s;
+}
+
+.cards-container .cards .card:hover {
+    border: 1px solid #a31722;
+}
+
+.cards-container .information {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+    width: 100%;
+    text-align: center;
+}
+
+.cards-container .information h3 {
+    font-size: 25px;
+    color: #fff;
+}
+
+.cards-container .information .start {
+    width: 200px;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+    background: transparent;
+}
+
+.cards-container .information .start:hover {
+    border: 1px solid #a31722;
+    color: #a31722;
+    cursor: pointer;
+}
+
+.showback{
+    transform: perspective(600px) rotateY(360deg);
+}
+
+.hideFront{
+    transform: perspective(600px) rotateY(180deg);
+}
